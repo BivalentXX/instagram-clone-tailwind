@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import FirebaseContext from '../context/firebase';
 import * as ROUTES from '../constants/routes';
 import { doesUsernameExist } from '../services/firebase';
-import { set } from 'date-fns';
+
 
 export default function SignUp() {
   const history = useHistory();
@@ -11,7 +11,7 @@ export default function SignUp() {
 
   const [username, setUsername] = useState('');
   const [fullName, setFullName] = useState('');
-  const [emailAddress, setEmailAddress] = useState('');
+  const [emailAddress, setEmailAddress] = useState(''); 
   const [password, setPassword] = useState('');
 
   const [error, setError] = useState('');
@@ -27,8 +27,6 @@ export default function SignUp() {
           .auth()
           .createUserWithEmailAndPassword(emailAddress, password);
 
-        // authentication
-        // -> emailAddress & password & username (displayName)
         await createdUserResult.user.updateProfile({
           displayName: username
         });
@@ -45,6 +43,7 @@ export default function SignUp() {
             followers: [],
             dateCreated: Date.now()
           });
+          console.log(createdUserResult)
 
           history.push(ROUTES.DASHBOARD);
       } catch (error) {
