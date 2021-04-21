@@ -30,7 +30,7 @@ export default function Header() {
             {user ? (
               <>
                 <Link to={ROUTES.DASHBOARD} aria-label="Dashboard">
-                <Homeicon></Homeicon>
+                <Homeicon />
                 </Link>
 
                 <button
@@ -47,14 +47,14 @@ export default function Header() {
                     }
                   }}>
 
-                  <Logouticon></Logouticon>
+                  <Logouticon />
                   </button>
                   <div className="flex items-center cursor-pointer">
                     <Link to={`/p/${user?.username}`}>
                       <img
                         className="rounded-full h-8 w-8 flex"
                         src={`/images/avatars/${user.username}.jpg`}
-                        alt={`${user?.username} profile`}
+                        alt={`${user?.username} `}
                       />
                     </Link>
                   </div>
