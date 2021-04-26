@@ -1,0 +1,14 @@
+// eslint-disable-next-line react-hooks/exhaustive-deps
+  Added to
+    src\components\profile\index.js
+    src\components\sidebar\suggestions.js
+    src\hooks\use-photos.js
+
+TODO
+// Add skeleton loading for user profile icon in nav bar
+// include individual user photo browsing functinoality with Modals
+// integrate real time messaging
+// integrate an explore function using the suggestions API
+// integrate a notification feed 
+// integrate functionality where if comments > 3 then hide additional comments
+//implement upload functionality

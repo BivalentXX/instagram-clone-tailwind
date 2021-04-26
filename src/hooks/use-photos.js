@@ -12,11 +12,12 @@ export default function usePhotos(user) {
         // re-arrange array to be newest photos first by dateCreated
         followedUserPhotos.sort((a, b) => b.dateCreated - a.dateCreated);
         setPhotos(followedUserPhotos);
-        console.log(user.userId, user.following)
+        // console.log(user.userId, user.following)
       }
     }
     
     getTimelinePhotos();
+// eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user?.userId]);
 
   return { photos };

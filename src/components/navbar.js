@@ -6,12 +6,14 @@ import * as ROUTES from '../constants/routes';
 import useUser from '../hooks/use-user.js';
 import Homeicon from './icons/homeicon'
 import Logouticon from './icons/logouticon'
+import NavbarUser from './icons/navbar-user'
 
-export default function Header() {
+
+export default function Navbar() {
   const { firebase } = useContext(FirebaseContext);
+  const history = useHistory(); 
   const { user: loggedInUser } = useContext(UserContext);
   const { user } = useUser(loggedInUser?.uid);
-  const history = useHistory(); 
 
   return (
     <header className="h-16 bg-white border-b border-gray-primary mb-8">
@@ -50,14 +52,9 @@ export default function Header() {
                   <Logouticon />
                   </button>
                   <div className="flex items-center cursor-pointer">
-                    <Link to={`/p/${user?.username}`}>
-                      <img
-                        className="rounded-full h-8 w-8 flex"
-                        src={`/images/avatars/${user.username}.jpg`}
-                        alt={`${user?.username} `}
-                      />
-                    </Link>
+                    <NavbarUser username={user.username}/>
                   </div>
+
               </>
             ) : (
               <>

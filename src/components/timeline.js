@@ -1,4 +1,3 @@
-import { useContext } from 'react'
 import Skeleton from 'react-loading-skeleton';
 import useUser from '../hooks/use-user'
 import usePhotos from '../hooks/use-photos';
@@ -7,7 +6,7 @@ import Post from './post/index'
 export default function Timeline() {
   const { user } = useUser()
   const { photos } = usePhotos(user);
-  console.log('photo', photos);
+  // console.log('photo', photos);
 
   return (
   <div className="container col-span-2">

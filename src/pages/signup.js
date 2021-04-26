@@ -43,7 +43,7 @@ export default function SignUp() {
             followers: [],
             dateCreated: Date.now()
           });
-          console.log(createdUserResult)
+          // console.log(createdUserResult)
 
           history.push(ROUTES.DASHBOARD);
       } catch (error) {

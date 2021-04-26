@@ -28,7 +28,6 @@ export default function Post({ content }) {
       commentInput={commentInput}
       />
   </div>
-
   )
 }
 
