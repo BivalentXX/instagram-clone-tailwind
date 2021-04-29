@@ -2,6 +2,7 @@
 
 ## Fully functional. Upload, follow, comment, like, visit profiles, view a timeline.
 
+## Current Status: Finishing up cypress testing 100% E2E
     
 HIGH PRIORITY TODO
 * Add a key to timeline posts
