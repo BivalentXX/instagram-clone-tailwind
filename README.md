@@ -40,4 +40,6 @@ TODO
     *src\hooks\use-photos.js
 
 
+*Special thanks to Karl Hadwen for supplying the base tutorial on creating this application*
+
 
