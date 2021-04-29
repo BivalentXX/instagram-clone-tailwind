@@ -1,7 +1,5 @@
 # [Hosted using Netlify and Firebase =D](https://keen-meninsky-f10d7a.netlify.app)
 
-## Fully functional. Upload, follow, comment, like, visit profiles, view a timeline.
-
 ## Current Status: Finishing up cypress testing 100% E2E
     
 HIGH PRIORITY TODO
