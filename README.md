@@ -33,11 +33,11 @@ TODO
 
 
 // eslint-disable-next-line react-hooks/exhaustive-deps
-
   Added to
     *src\components\profile\index.js
     *src\components\sidebar\suggestions.js
     *src\hooks\use-photos.js
+    
 
 
 *Special thanks to Karl Hadwen for supplying the base tutorial on creating this application*
