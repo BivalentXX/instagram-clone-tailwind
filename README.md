@@ -1,5 +1,6 @@
 ## [Hosted using Netlify =D](https://keen-meninsky-f10d7a.netlify.app)
 
+# Fully functional. Upload and follow. Like and comment on posts. Visit Users Profiles and view images one by one
 
     
 HIGH PRIORITY TODO
