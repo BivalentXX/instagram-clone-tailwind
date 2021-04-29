@@ -22,8 +22,8 @@ TODO
 * implement 50projects50days-master\drag-n-drop into profile page
 * implement 50projects50days-master\image-carousel\index.html as an OPTION for timeline viewing
 * implement OPTION pagination or scrolling for comment viewing on 'single-post-viewer'
-* implement 50projects50days-master\mobile-tab-navigation on loggedinuser profile page to view saved, and @taggedLoggedInUser
-*implement live search on inserting '@' in comment bar 
+* implement 50projects50days-master\mobile-tab-navigation on loggedinuser profile page
+* implement live search on inserting '@' in comment bar 
 * implement 50projects50days-master\password-strength-background
 * implement subscription to notifications
 * integrate 50projects50days-master\toast-notification when notifications happen
