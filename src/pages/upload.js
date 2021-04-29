@@ -9,12 +9,12 @@ import useUser from '../hooks/use-user';
 import PostUploader from '../components/postuploader';
 
 
-export default function Profile() {
+export default function Upload() {
   const { username } = useParams()
   const [user, setUser] = useState(null)
   const history = useHistory()
   const { user: loggedInUser } = useContext(UserContext);
-  // const { activeUser } = useUser(loggedInUser?.uid);
+  const { activeUser } = useUser(loggedInUser?.uid);
 
   useEffect(() => {
     async function checkUserExists() {
@@ -37,8 +37,10 @@ export default function Profile() {
 
     <div className="bg-gray-background">
 
-      <Navbar />
-      <UserProfile user={user}/>
+    <Navbar />
+      <PostUploader loggedInUserUid={activeUser} />
+ 
+      
 
     </div>
   ) : null;

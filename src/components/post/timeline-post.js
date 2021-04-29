@@ -6,10 +6,13 @@ import Actions from './post-actions'
 import Footer from './post-footer'
 import Comments from './post-comments';
 
-export default function Post({ content }) {
+export default function TimelinePost({ content }) {
   const commentInput = useRef(null);
 
   const handleFocus = () => commentInput.current.focus
+
+  // console.log(content)
+  // console.log(content.docId)
 
   return (
   <div className="rounded col-span-4 border bg-white border-gray-primary mb-12">
@@ -32,7 +35,7 @@ export default function Post({ content }) {
 }
 
 
-Post.propTypes = {
+TimelinePost.propTypes = {
   content: PropTypes.shape({
     username: PropTypes.string.isRequired,
     imageSrc: PropTypes.string.isRequired,

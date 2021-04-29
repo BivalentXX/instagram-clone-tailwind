@@ -11,7 +11,7 @@ export default function NavbarUser({ username }) {
     <Link to={`/p/${username}`}>
       <img
         className="rounded-full h-8 w-8 flex"
-        src={`/images/avatars/${username}.jpg`}
+        src={`/images/avatars/default.png`}
         alt={`${username} `}
       />
     </Link>
@@ -20,6 +20,8 @@ export default function NavbarUser({ username }) {
   }
 
 
+//removed for production implementation until we get avatar upload functionality
+  // src={`/images/avatars/${username}.jpg`}
 
 // Replacing...
   // {!user ? (

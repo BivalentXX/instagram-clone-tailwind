@@ -7,13 +7,16 @@ import useUser from '../hooks/use-user.js';
 import Homeicon from './icons/homeicon'
 import Logouticon from './icons/logouticon'
 import NavbarUser from './icons/navbar-user'
+import Uploadicon from './icons/uploadicon';
 
 
 export default function Navbar() {
-  const { firebase } = useContext(FirebaseContext);
+  const { firebaseApp } = useContext(FirebaseContext);
   const history = useHistory(); 
   const { user: loggedInUser } = useContext(UserContext);
   const { user } = useUser(loggedInUser?.uid);
+console.log(user.username)
+
 
   return (
     <header className="h-16 bg-white border-b border-gray-primary mb-8">
@@ -34,23 +37,27 @@ export default function Navbar() {
                 <Link to={ROUTES.DASHBOARD} aria-label="Dashboard">
                 <Homeicon />
                 </Link>
-
+                <Link to={`/upload/${user.username}`} aria-label="Upload">
+                <Uploadicon />
+                </Link>
                 <button
                   type="button"
                   title="Sign Out"
                   onClick={() => {
-                    firebase.auth().signOut()
+                    firebaseApp.auth().signOut()
                     history.push(ROUTES.LOGIN);
                   }}
                   onKeyDown={(event) => {
                     if (event.key === 'Enter') {
-                      firebase.auth().signOut()
+                      firebaseApp.auth().signOut()
                       history.push(ROUTES.LOGIN);
                     }
                   }}>
 
                   <Logouticon />
+                 
                   </button>
+                  
                   <div className="flex items-center cursor-pointer">
                     <NavbarUser username={user.username}/>
                   </div>

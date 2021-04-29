@@ -7,7 +7,7 @@ import { doesUsernameExist } from '../services/firebase';
 
 export default function SignUp() {
   const history = useHistory();
-  const { firebase } = useContext(FirebaseContext);
+  const { firebaseApp } = useContext(FirebaseContext);
 
   const [username, setUsername] = useState('');
   const [fullName, setFullName] = useState('');
@@ -23,7 +23,7 @@ export default function SignUp() {
     const usernameExists = await doesUsernameExist(username);
     if (!usernameExists.length) {
       try {
-        const createdUserResult = await firebase
+        const createdUserResult = await firebaseApp
           .auth()
           .createUserWithEmailAndPassword(emailAddress, password);
 
@@ -31,7 +31,7 @@ export default function SignUp() {
           displayName: username
         });
 
-        await firebase
+        await firebaseApp
           .firestore()
           .collection('users')
           .add({

@@ -1,4 +1,5 @@
 import Firebase from 'firebase/app';
+import firebase from 'firebase';
 import 'firebase/firestore';
 import 'firebase/auth';
 // import { config } from '../config.js'
@@ -16,10 +17,16 @@ const configKeys = {
   appId: REACT_APP_appId
 }
 
-const firebase = Firebase.initializeApp(configKeys);
+const firebaseApp = Firebase.initializeApp(configKeys);
+
+const storage = firebase.storage();
 const { FieldValue } = Firebase.firestore;
+
+const db = firebaseApp.firestore();
+
+
 
 //console.log('firebase', firebase);
 //seedDatabase(firebase)
 
-export { firebase, FieldValue };
+export { db, storage, firebaseApp, FieldValue };

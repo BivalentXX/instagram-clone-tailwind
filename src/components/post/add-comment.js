@@ -5,7 +5,7 @@ import UserContext from '../../context/user'
 
 export default function AddComment({docId, comments, setComments, commentInput}) {
   const [comment, setComment] = useState('');
-  const { firebase, FieldValue } = useContext(FirebaseContext);
+  const { firebaseApp, FieldValue } = useContext(FirebaseContext);
   const {
     user: {displayName}
   } = useContext(UserContext);
@@ -16,7 +16,7 @@ export default function AddComment({docId, comments, setComments, commentInput})
     setComments([...comments, { displayName, comment } ])
     setComment('')
 
-    return firebase
+    return firebaseApp
     .firestore()
     .collection('photos')
     .doc(docId)

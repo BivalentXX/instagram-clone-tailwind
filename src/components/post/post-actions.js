@@ -10,12 +10,12 @@ export default function Actions({ docId, totalLikes, likedPhoto, handleFocus }) 
   } = useContext(UserContext);
   const [toggleLiked, setToggleLiked] = useState(likedPhoto)
   const [likes, setLikes] = useState(totalLikes)
-  const { firebase, FieldValue } = useContext(FirebaseContext)
+  const { firebaseApp, FieldValue } = useContext(FirebaseContext)
 
   const handleToggleLiked = async () => {
     setToggleLiked((toggleLiked) => !toggleLiked);
 
-    await firebase 
+    await firebaseApp 
       .firestore()
       .collection('photos')
       .doc(docId)

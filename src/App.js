@@ -11,6 +11,7 @@ const SignUp = lazy(() => import('./pages/signup'));
 const Profile = lazy(() => import('./pages/profile'));
 const NotFound = lazy(() => import('./pages/not-found'));
 const Dashboard = lazy(() => import('./pages/dashboard'));
+const Upload = lazy(() => import('./pages/upload'));
 
 
 export default function App() {
@@ -29,10 +30,12 @@ export default function App() {
               <SignUp />
             </IsUserLoggedIn>
 
+
             <ProtectedRoute user={user} path={ROUTES.DASHBOARD} exact>
               <Dashboard />
             </ProtectedRoute>
-
+            
+            <Route path={ROUTES.UPLOAD} component={Upload} />
             <Route path={ROUTES.PROFILE} component={Profile} />
             <Route component={NotFound} />
         
