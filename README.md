@@ -1,4 +1,4 @@
-# [Hosted using Netlify and Firebase =D](https://keen-meninsky-f10d7a.netlify.app)
+# [ReactJS Hook App Hosted using Netlify and Firebase =D](https://keen-meninsky-f10d7a.netlify.app)
 
 ## Current Status: Finishing up cypress testing 100% E2E
     
