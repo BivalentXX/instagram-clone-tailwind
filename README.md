@@ -1,4 +1,4 @@
-## [Hosted using Netlify and Firebase =D](https://keen-meninsky-f10d7a.netlify.app)
+# [Hosted using Netlify and Firebase =D](https://keen-meninsky-f10d7a.netlify.app)
 
 ## Fully functional. Upload, follow, comment, like, visit profiles, view a timeline.
 
