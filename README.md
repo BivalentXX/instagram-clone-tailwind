@@ -3,11 +3,11 @@
 
     
 HIGH PRIORITY TODO
-*Add a key to timeline posts
-*Implement Search
-*Implement Messaging
-*Redesign upload page
-*Refactor avatar sourcing to pull from image storage
+* Add a key to timeline posts
+* Implement Search
+* Implement Messaging
+* Redesign upload page
+* Refactor avatar sourcing to pull from image storage
 
 TODO
 * Add skeleton loading for user profile icon in nav bar
