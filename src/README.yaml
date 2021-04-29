@@ -1,9 +1,19 @@
+[Hosted using](https://keen-meninsky-f10d7a.netlify.app)
+
+
 //LINTING//
 // eslint-disable-next-line react-hooks/exhaustive-deps
   Added to
     src\components\profile\index.js
     src\components\sidebar\suggestions.js
     src\hooks\use-photos.js
+    
+HIGH PRIORITY TODO
+//Implement Search
+//Implement Messaging
+//Redesign upload page
+//Refactor avatar sourcing to pull from image storage
+
 
 TODO
 // Add skeleton loading for user profile icon in nav bar
@@ -29,11 +39,3 @@ TODO
 REFACTOR
 //src\components\timeline.js logic can be implemented into hook
 
-
-//follower and following modal
-//Planned format of upload modal 
-Upload! -- esc
-OPTION[tab format]::: Add a new Photo Change Avatar
-add a caption
-input field
-cancel -- upload
