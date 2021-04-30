@@ -1,6 +1,9 @@
-# [ReactJS Hook App Hosted using Netlify and Firebase =D](https://keen-meninsky-f10d7a.netlify.app)
+#New version just released 4/30 5:05 PM
+
+# [ReactJS Hook App Hosted using Netlify and Firebase =D](https://happy-lichterman-215dda.netlify.app)
 
 ## Current Status: Finishing up cypress testing 100% E2E
+
     
 HIGH PRIORITY TODO
 * Add a key to timeline posts
