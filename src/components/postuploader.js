@@ -3,10 +3,14 @@ import firebase from 'firebase';
 // import { Button, Input } from '@material-ui/core';
 import { storage, db } from "../lib/firebase.js"
 
-export default function PostUploader({loggedInUserUid}) {
+export default function PostUploader({ user }) {
   const [image, setImage] = useState(null);
   const [progress, setProgress] = useState(0);
   const [caption, setCaption] = useState('');
+  const [successToast, setSuccessToast] = useState(false)
+
+  //toast notifcation upon succesful upload
+  
 
   const handleChange = (e) => {
       if (e.target.files[0]) {
@@ -24,6 +28,7 @@ export default function PostUploader({loggedInUserUid}) {
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100
             );
             setProgress(progress);
+            if (progress = 100) {setSuccessToast(true)}
         }, 
         (error) => {
             console.log(error);
@@ -40,7 +45,7 @@ export default function PostUploader({loggedInUserUid}) {
                       dateCreated: Date.now(),
                       caption: caption,
                       imageSrc: url,
-                      userId: loggedInUserUid,
+                      userId: user.userId,
                       likes: [],
                       comments: []
                   });
@@ -57,22 +62,13 @@ export default function PostUploader({loggedInUserUid}) {
 
       return (
       <>
-
-
-
-
-
-      
-
-
-
     <div className="py-4 text-left px-6 rounded col-span-4 border bg-white border-gray-primary">
 
       <div className="flex justify-between items-center pb-3 mb-12">
         <p className="text-2xl font-bold">Share a photo on your Timeline!</p>
       </div>
 
-      <div className="mb-12 flex content-center mx-auto flex justify-center">'
+      <div className="mb-12 flex content-center mx-auto flex justify-center">
         <div>
         <input className="mx-auto" type="file" onChange={handleChange} />
         </div>
@@ -85,10 +81,14 @@ export default function PostUploader({loggedInUserUid}) {
         </div>
         <input className="pl-4" type="text" placeholder="Enter a caption" value={caption} 
           onChange={event => setCaption(event.target.value)} />
-          <button class="bg-blue-medium hover:bg-blue-dark font-bold text-sm rounded text-white w-20 h-8">
+          <button class="bg-blue-medium hover:bg-blue-dark font-bold text-sm rounded text-white w-20 h-8" onClick={handleUpload}>
             Upload
           </button>
         </div>
+        {successToast ? ( <button
+        class="btn-fade-in bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded mr-2 transition-all duration-500 ease-in-out">2: Fade
+        in image</button>
+        ) : (null)}
   
     </div>
 

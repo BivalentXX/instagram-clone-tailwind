@@ -34,7 +34,7 @@ return (
     <div className="bg-white w-11/12 max-w-md mx-auto rounded shadow-lg z-50 overflow-y-auto">
       
 
-    <Header username={profile.username} />
+    <Header profile={profile} />
  
     <Image src={photo.imageSrc} caption={photo.caption} />
     <Actions

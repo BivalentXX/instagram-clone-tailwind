@@ -11,6 +11,7 @@ export default function Header({
   followerCount,
   setFollowerCount,
   profile: {
+    avatarSrc,
     docId: profileDocId,
     userId: profileUserId,
     fullName,
@@ -47,10 +48,11 @@ export default function Header({
     <div className="grid grid-cols-3 gap-4 justify-between mx-auto max-w-screen-lg">
       <div className="container flex justify-center items-center">
         {profileUsername ? (
+            
           <img
             className="rounded-full h-40 w-40 flex"
             alt={`${fullName} profile`}
-            src={`/images/avatars/${profileUsername}.jpg`}
+            src={avatarSrc}
           />
         ) : (
           <Skeleton count={1} width={300} height={300} className="mb-5" />

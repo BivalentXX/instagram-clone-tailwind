@@ -1,10 +1,10 @@
 /* eslint-disable no-nested-ternary */
 
 import { React, useState } from 'react'
-import Hearticon from '../icons/hearticon'
-import Commenticon from '../icons/commenticon'
+// import Hearticon from '../icons/hearticon'
+// import Commenticon from '../icons/commenticon'
 import SinglePostViewer from '../post/single-post-viewer';
-import ReactDom from 'react-dom'
+
 
 
 
@@ -16,10 +16,10 @@ export default function Photos({ photo, profile }) {
 
   const handleToggleSinglePostViewer = async () => {
     setToggleSinglePostViewer((toggleSinglePostViewer) => !toggleSinglePostViewer);  
-    console.log(toggleSinglePostViewer)
+
   }
 
-
+// console.log(photo)
 
 
 return (

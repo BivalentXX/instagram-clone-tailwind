@@ -6,7 +6,7 @@ import * as ROUTES from '../constants/routes';
 import useUser from '../hooks/use-user.js';
 import Homeicon from './icons/homeicon'
 import Logouticon from './icons/logouticon'
-import NavbarUser from './icons/navbar-user'
+import Avataricon from './icons/avatar-icon'
 import Uploadicon from './icons/uploadicon';
 
 
@@ -15,7 +15,7 @@ export default function Navbar() {
   const history = useHistory(); 
   const { user: loggedInUser } = useContext(UserContext);
   const { user } = useUser(loggedInUser?.uid);
-console.log(user.username)
+
 
 
   return (
@@ -58,9 +58,9 @@ console.log(user.username)
                  
                   </button>
                   
-                  <div className="flex items-center cursor-pointer">
-                    <NavbarUser username={user.username}/>
-                  </div>
+                <div className="flex items-center cursor-pointer">
+                  <Avataricon user={user}/>
+                </div>
 
               </>
             ) : (
