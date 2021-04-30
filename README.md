@@ -1,6 +1,11 @@
-# [ReactJS Hook App Hosted using Netlify and Firebase =D](https://keen-meninsky-f10d7a.netlify.app)
+#New version just released 4/30 5:05 PM 
+*created new field 'avatarSrc' in user document to fill avataricons on post/profile headers, navbar, and sidebar
+*working on uploading avatar functionality
+
+# [ReactJS Hook App Hosted using Netlify and Firebase =D](https://suspicious-kepler-ab3169.netlify.app)
 
 ## Current Status: Finishing up cypress testing 100% E2E
+
     
 HIGH PRIORITY TODO
 * Add a key to timeline posts
