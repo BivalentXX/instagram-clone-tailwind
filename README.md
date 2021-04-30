@@ -1,4 +1,6 @@
-#New version just released 4/30 5:05 PM
+#New version just released 4/30 5:05 PM 
+*created new field 'avatarSrc' in user document to fill avataricons on post/profile headers, navbar, and sidebar
+*working on uploading avatar functionality
 
 # [ReactJS Hook App Hosted using Netlify and Firebase =D](https://happy-lichterman-215dda.netlify.app)
 
