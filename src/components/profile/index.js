@@ -5,7 +5,7 @@ import Photos from './photos';
 import { getUserPhotosByUsername } from '../../services/firebase';
 
 export default function UserProfile({ user }) {
-  console.log('user', user)
+
   const reducer = (state, newState) => ({ ...state, ...newState });
   const initialState = {
     profile: {},
@@ -26,7 +26,7 @@ export default function UserProfile({ user }) {
     getProfileInfoAndPhotos();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user.username]); 
-
+console.log(user)
   // console.log('photosCollection', photosCollection)
 
   return (

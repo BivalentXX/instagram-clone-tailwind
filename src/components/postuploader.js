@@ -28,7 +28,6 @@ export default function PostUploader({ user }) {
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100
             );
             setProgress(progress);
-            if (progress = 100) {setSuccessToast(true)} else {setSuccessToast(null)}
         }, 
         (error) => {
             console.log(error);
@@ -49,7 +48,7 @@ export default function PostUploader({ user }) {
                       likes: [],
                       comments: []
                   });
-                  
+                  setSuccessToast(true)
                   setProgress(0);
                   setCaption("");
                   setImage(null)
@@ -60,35 +59,46 @@ export default function PostUploader({ user }) {
       )
       }
 
+
+      // if (progress === 100) {setSuccessToast(true)} else {setSuccessToast(null)}
+
       return (
       <>
     <div className="py-4 text-left px-6 rounded col-span-4 border bg-white border-gray-primary">
 
-      <div className="flex justify-between items-center pb-3 mb-12">
+      <div className="flex justify-center items-center pb-3 mb-6">
         <p className="text-2xl font-bold">Share a photo on your Timeline!</p>
       </div>
 
-      <div className="mb-12 flex content-center mx-auto flex justify-center">
-        <div>
+      <div className="p-12 mb-12 flex content-center mx-auto flex justify-center border-gray-primary border-b border-t">
+
         <input className="mx-auto" type="file" onChange={handleChange} />
-        </div>
+    
       </div>
 
-      <div className="flex justify-between pt-2">
-        <div className>
-          <progress value={progress} max="100"/>
-          <p className="text-xs ml-4">upload progress bar....</p>
-        </div>
-        <input className="pl-4" type="text" placeholder="Enter a caption" value={caption} 
+      <div className="flex justify-around pt-2 mb-8"> 
+        <input className="bg-gray-primary pl-4" type="text" placeholder="Enter a caption" value={caption} 
           onChange={event => setCaption(event.target.value)} />
           <button class="bg-blue-medium hover:bg-blue-dark font-bold text-sm rounded text-white w-20 h-8" onClick={handleUpload}>
             Upload
           </button>
+
         </div>
-        {successToast ? ( <button
-        class="btn-fade-in bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded mr-2 transition-all duration-500 ease-in-out">2: Fade
-        in image</button>
-        ) : (null)}
+      
+        <div className="flex justify-end">
+        <span className="opacity-0">Successfully uploaded</span>
+          {successToast &&           
+            <span
+              className="bg-gray-background text-black font-bold py-2 px-4 rounded mr-2 animate-fade-in-down"
+              onAnimationEnd={() => setSuccessToast(false)}
+            >
+              Successfully uploaded =D
+            </span>
+          }
+        </div>
+  
+
+     
   
     </div>
 
@@ -96,4 +106,11 @@ export default function PostUploader({ user }) {
     )
 }
 
-    
+// {successToast ? ( <button
+//   class="btn-fade-in bg-teal-500 hover:bg-teal-600 text-white font-bold py-2 px-4 rounded mr-2 transition-all duration-500 ease-in-out">2: Fade
+//   in image</button>
+//   ) : (null)}    
+
+
+//special thanks for tabbed component from:::
+// https://www.creative-tim.com/learning-lab/tailwind-starter-kit/documentation/react/tabs/icons

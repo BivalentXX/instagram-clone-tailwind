@@ -17540,6 +17540,18 @@ video {
   }
 }
 
+@keyframes fade-in-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .animate-none {
   animation: none;
 }
@@ -17558,6 +17570,10 @@ video {
 
 .animate-bounce {
   animation: bounce 1s infinite;
+}
+
+.animate-fade-in-down {
+  animation: fade-in-down 1.5s ease-out;
 }
 
 .mix-blend-normal {
@@ -35174,6 +35190,10 @@ video {
     animation: bounce 1s infinite;
   }
 
+  .sm\:animate-fade-in-down {
+    animation: fade-in-down 1.5s ease-out;
+  }
+
   .sm\:mix-blend-normal {
     mix-blend-mode: normal;
   }
@@ -52695,6 +52715,10 @@ video {
 
   .md\:animate-bounce {
     animation: bounce 1s infinite;
+  }
+
+  .md\:animate-fade-in-down {
+    animation: fade-in-down 1.5s ease-out;
   }
 
   .md\:mix-blend-normal {
@@ -70220,6 +70244,10 @@ video {
     animation: bounce 1s infinite;
   }
 
+  .lg\:animate-fade-in-down {
+    animation: fade-in-down 1.5s ease-out;
+  }
+
   .lg\:mix-blend-normal {
     mix-blend-mode: normal;
   }
@@ -87743,6 +87771,10 @@ video {
     animation: bounce 1s infinite;
   }
 
+  .xl\:animate-fade-in-down {
+    animation: fade-in-down 1.5s ease-out;
+  }
+
   .xl\:mix-blend-normal {
     mix-blend-mode: normal;
   }
@@ -105264,6 +105296,10 @@ video {
 
   .\32xl\:animate-bounce {
     animation: bounce 1s infinite;
+  }
+
+  .\32xl\:animate-fade-in-down {
+    animation: fade-in-down 1.5s ease-out;
   }
 
   .\32xl\:mix-blend-normal {

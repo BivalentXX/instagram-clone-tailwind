@@ -65,7 +65,7 @@ export async function updateFollowedUserFollowing (
     .collection('users')
     .doc(profileDocId)
     .update({
-      follwers: isFollowingProfile
+      followers: isFollowingProfile
       ? FieldValue.arrayRemove(loggedInUserDocId)
       : FieldValue.arrayUnion(loggedInUserDocId)
     });
@@ -140,7 +140,7 @@ export async function toggleFollow(
   profileUserId,
   followingUserId
 ) {
-  await updateLoggedInUserFollowing(activeUserDocId, profileDocId, isFollowingProfile)
+  await updateLoggedInUserFollowing(activeUserDocId, profileUserId, isFollowingProfile)
 
   await updateFollowedUserFollowing(profileDocId, followingUserId, isFollowingProfile);
 }
