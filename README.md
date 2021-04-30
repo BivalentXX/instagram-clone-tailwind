@@ -1,24 +1,13 @@
-<<<<<<< HEAD
-*LINTING*
-* eslint-disable-next-line react-hooks/exhaustive-deps
-=======
-[Hosted using](https://keen-meninsky-f10d7a.netlify.app)
+# [ReactJS Hook App Hosted using Netlify and Firebase =D](https://keen-meninsky-f10d7a.netlify.app)
 
-
-//LINTING//
-// eslint-disable-next-line react-hooks/exhaustive-deps
->>>>>>> c85acd9581f7dc7d53e1efc47fe8020dec9bb1c5
-  Added to
-    src\components\profile\index.js
-    src\components\sidebar\suggestions.js
-    src\hooks\use-photos.js
+## Current Status: Finishing up cypress testing 100% E2E
     
 HIGH PRIORITY TODO
-//Implement Search
-//Implement Messaging
-//Redesign upload page
-//Refactor avatar sourcing to pull from image storage
-
+* Add a key to timeline posts
+* Implement Search
+* Implement Messaging
+* Redesign upload page
+* Refactor avatar sourcing to pull from image storage
 
 TODO
 * Add skeleton loading for user profile icon in nav bar
@@ -33,25 +22,24 @@ TODO
 * implement 50projects50days-master\drag-n-drop into profile page
 * implement 50projects50days-master\image-carousel\index.html as an OPTION for timeline viewing
 * implement OPTION pagination or scrolling for comment viewing on 'single-post-viewer'
-* implement 50projects50days-master\mobile-tab-navigation on loggedinuser profile page to view saved, and @taggedLoggedInUser
-*implement live search on inserting '@' in comment bar 
+* implement 50projects50days-master\mobile-tab-navigation on loggedinuser profile page
+* implement live search on inserting '@' in comment bar 
 * implement 50projects50days-master\password-strength-background
 * implement subscription to notifications
 * integrate 50projects50days-master\toast-notification when notifications happen
 * implement ability for LoggedInUser to change password
 * integrate 50projects50days-master\verify-account-ui as mobile verification for password change
 
-REFACTOR
-*src\components\timeline.js logic can be implemented into hook
 
-<<<<<<< HEAD
 
-*follower and following modal
-*Planned format of upload modal 
-Upload! -- esc
-OPTION[tab format]::: Add a new Photo Change Avatar
-add a caption
-input field
-cancel -- upload
-=======
->>>>>>> c85acd9581f7dc7d53e1efc47fe8020dec9bb1c5
+// eslint-disable-next-line react-hooks/exhaustive-deps
+  Added to
+    *src\components\profile\index.js
+    *src\components\sidebar\suggestions.js
+    *src\hooks\use-photos.js
+    
+
+
+*Special thanks to Karl Hadwen for supplying the base tutorial on creating this application*
+
+
