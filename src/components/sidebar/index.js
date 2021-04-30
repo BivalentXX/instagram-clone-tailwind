@@ -9,7 +9,7 @@ export default function Sidebar() {
   return (
     <div className="p-4">
       <User user={user} fullName={user.fullName} />
-      <Suggestions userId={user.userId} following={user.following} loggedInUserDocId={user.docId}/>
+      <Suggestions user={user} userId={user.userId} following={user.following} loggedInUserDocId={user.docId}/>
     </div>
   );
 

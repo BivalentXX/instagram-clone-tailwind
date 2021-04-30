@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
+import Avataricon from '../icons/avatar-icon';
 
 
 export default function User({ user, fullName }) {
@@ -9,11 +10,7 @@ export default function User({ user, fullName }) {
   ) : (
     <Link to={`/p/${user.username}`} className="grid grid-cols-4 gap-4 mb-6 items-center">
       <div className="flex items-center jsutify-between col-span-1">
-        <img 
-          className="rounded-full w-16 flex mr-3"
-          src={user.avatarSrc}
-          alt="logged in profile"
-        />
+       <Avataricon user={user} />
       </div>
       <div className="col-span-3">
         <p className="font-bold text-sm">{user.username}</p>

@@ -6,16 +6,16 @@ import Actions from './post-actions'
 import Footer from './post-footer'
 import Comments from './post-comments';
 
+
 export default function TimelinePost({ content }) {
   const commentInput = useRef(null);
   const handleFocus = () => commentInput.current.focus
 
-
-  // console.log(content.docId)
+  // const user = getUserByUserId(content.userId)
 
   return (
   <div className="rounded col-span-4 border bg-white border-gray-primary mb-12">
-    <Header username={content.username} />
+    <Header content={content} username={content.username} />
     <Image src={content.imageSrc} caption={content.caption} />
     <Actions
       docId={content.docId}
@@ -30,7 +30,8 @@ export default function TimelinePost({ content }) {
       commentInput={commentInput}
       />
   </div>
-  )
+
+  ) 
 }
 
 

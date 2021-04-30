@@ -28,7 +28,7 @@ export default function PostUploader({ user }) {
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100
             );
             setProgress(progress);
-            if (progress = 100) {setSuccessToast(true)}
+            if (progress = 100) {setSuccessToast(true)} else {setSuccessToast(null)}
         }, 
         (error) => {
             console.log(error);

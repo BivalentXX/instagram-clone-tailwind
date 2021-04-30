@@ -10,9 +10,9 @@ import UserProfile from '../components/profile'
 
 export default function Profile() {
   const { username } = useParams()
-  const [user, setUser] = useState(null)
   const history = useHistory()
-
+  
+  const [user, setUser] = useState(null)
   
 
   useEffect(() => {
@@ -33,7 +33,6 @@ export default function Profile() {
 // console.log('active', activeUser)
 
   return user ? (
-
     <div className="bg-gray-background">
       <Navbar />
       <UserProfile user={user}/>

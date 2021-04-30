@@ -26,10 +26,11 @@ export default function Header({
   const activeBtnFollow = user?.username && user?.username !== profileUsername;
 
   const handleToggleFollow = async () => {
-    setIsFollowingProfile((isFollowingProfile) => !isFollowingProfile);
+  
     setFollowerCount({
       followerCount: isFollowingProfile ? followerCount - 1 : followerCount + 1
     });
+    await setIsFollowingProfile((isFollowingProfile) => !isFollowingProfile);
     await toggleFollow(isFollowingProfile, user.docId, profileDocId, profileUserId, user.userId);
   };
 
@@ -47,7 +48,7 @@ export default function Header({
   return (
     <div className="grid grid-cols-3 gap-4 justify-between mx-auto max-w-screen-lg">
       <div className="container flex justify-center items-center">
-        {profileUsername ? (
+        {avatarSrc ? (
             
           <img
             className="rounded-full h-40 w-40 flex"
@@ -55,7 +56,11 @@ export default function Header({
             src={avatarSrc}
           />
         ) : (
-          <Skeleton count={1} width={300} height={300} className="mb-5" />
+          <img
+          className="rounded-full h-40 w-40 flex"
+          src={"/images/avatars/default.png"}
+          alt={`${fullName}`}
+        />
         )}
       </div>
       <div className="flex items-center justify-center flex-col col-span-2">

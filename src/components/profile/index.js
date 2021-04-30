@@ -5,7 +5,7 @@ import Photos from './photos';
 import { getUserPhotosByUsername } from '../../services/firebase';
 
 export default function UserProfile({ user }) {
- 
+  console.log('user', user)
   const reducer = (state, newState) => ({ ...state, ...newState });
   const initialState = {
     profile: {},
