@@ -17,10 +17,11 @@ export default function PostUploader({ user }) {
           setImage(e.target.files[0]);
       }
   };
+  
 
   const handleUpload = () => {  
       const uploadTask = storage.ref(`images/${image.name}`).put(image);
-      
+      document.getElementById("fileUploadInput").value = "";
       uploadTask.on(
         "state_changed",
         (snapshot) => {
@@ -72,7 +73,7 @@ export default function PostUploader({ user }) {
 
       <div className="p-12 mb-12 flex content-center mx-auto flex justify-center border-gray-primary border-b border-t">
 
-        <input className="mx-auto" type="file" onChange={handleChange} />
+        <input id="fileUploadInput" className="mx-auto" type="file" onChange={handleChange} />
     
       </div>
 
@@ -85,12 +86,12 @@ export default function PostUploader({ user }) {
 
         </div>
       
-        <div className="flex justify-end">
-        <span className="opacity-0">Successfully uploaded</span>
-          {successToast &&           
+        <div className="flex justify-center">
+        <span className="opacity-0">File successfully uploaded</span>
+          {successToast && 
             <span
-              className="bg-gray-background text-black font-bold py-2 px-4 rounded mr-2 animate-fade-in-down"
-              onAnimationEnd={() => setSuccessToast(false)}
+              className="text-center bg-gray-background text-black font-bold py-2 px-4 rounded mr-2 animate-fade-in-down"
+              onAnimationEnd={() => setTimeout(() => {setSuccessToast(false)}, 3000)}
             >
               Successfully uploaded =D
             </span>

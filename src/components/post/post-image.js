@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 
 export default function Image({src, caption}) {
-  return <img src={src} alt={caption} />
+  return <img className="h-96 w-full object-cover" src={src} alt={caption} />
 }
 
 Image.propTypes = {

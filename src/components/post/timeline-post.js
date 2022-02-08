@@ -9,7 +9,7 @@ import Comments from './post-comments';
 
 export default function TimelinePost({ content }) {
   const commentInput = useRef(null);
-  const handleFocus = () => commentInput.current.focus
+  const handleFocus = () => commentInput.current.focus()
 
   // const user = getUserByUserId(content.userId)
 
@@ -30,7 +30,6 @@ export default function TimelinePost({ content }) {
       commentInput={commentInput}
       />
   </div>
-
   ) 
 }
 
