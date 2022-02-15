@@ -12,7 +12,7 @@ export default function TimelinePost({ content }) {
   const handleFocus = () => commentInput.current.focus()
 
   // const user = getUserByUserId(content.userId)
-
+// console.log('content', content)
   return (
   <div className="rounded col-span-4 border bg-white border-gray-primary mb-12">
     <Header content={content} username={content.username} />

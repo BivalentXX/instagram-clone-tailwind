@@ -10,7 +10,7 @@ export default function NotFound() {
   return (
     <div className="bg-gray-background">
       <Navbar />
-      <div className="mx-auth max-w-screen-lg">
+      <div className="mx-auto max-w-screen-lg">
         <p className="text-center text-2xl">Doo Duuu ddoooo. Nothing here</p>
       </div>
     </div>

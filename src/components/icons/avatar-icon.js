@@ -1,13 +1,8 @@
 import { Link } from 'react-router-dom';
 
-
-
-
 export default function Avataricon({ user: { username, avatarSrc } }) {
-
-
   return !avatarSrc ? (
-    <Link to={`/p/${username}`}>
+    <Link to={`/login`}>
     <img
         className="rounded-full h-8 w-8 flex"
         src={"/images/avatars/default.png"}
@@ -15,7 +10,6 @@ export default function Avataricon({ user: { username, avatarSrc } }) {
       />
      </Link>
   ) : (
-    
     <Link to={`/p/${username}`}>
       <img
         className="rounded-full h-8 w-8 flex"
@@ -23,9 +17,8 @@ export default function Avataricon({ user: { username, avatarSrc } }) {
         alt={`${username} `}
       />
     </Link>
-  
   )
-  }
+}
 
 
 //removed for production implementation until we get avatar upload functionality

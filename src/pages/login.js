@@ -14,8 +14,6 @@ export default function Login() {
   
   const isInvalid = password === '' || emailAddress === '';
 
- 
-
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
@@ -28,14 +26,9 @@ export default function Login() {
     }
   };
 
-
-
-
   useEffect(() => {
     document.title = 'Login - Instagram'
   }, [])
-
-
 
   return (
   <div className="container flex mx-auto max-w-screen-md items-center h-screen">

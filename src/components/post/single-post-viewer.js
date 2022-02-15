@@ -10,19 +10,17 @@ import Footer from './post-footer'
 import Comments from './post-comments';
 // import Closeicon from '../icons/closeicon';
 
-
 export default function SinglePostViewer({ photo, profile, toggleSinglePostViewer}) {
   const commentInput = useRef(null);
   const handleFocus = () => commentInput.current.focus()
 
   // const [ toggleSinglePostViewer, setToggleSinglePostViewer ] = useState(false)
-
   // const handleToggleSinglePostViewer = async () => {
   //   setToggleSinglePostViewer((toggleSinglePostViewer) => !toggleSinglePostViewer);  
   //   console.log(toggleSinglePostViewer)
   // }
-
 // console.log('photo', photo)
+ console.log('userLikedPhoto', photo)
   return (
   <>
     <div className="fixed w-6/12 h-400 top-2 left-1/3  flex items-center justify-center "> 
@@ -56,3 +54,7 @@ export default function SinglePostViewer({ photo, profile, toggleSinglePostViewe
   </div>
 </div> */
 
+// Dev notation - 02/13/22 - Need to abstract actions away from actually rendering the posts themselves
+// The issue is that if a user wants to view the post without logging in (anon) it breaks the application
+// Also need to fix the issue where the like status svg is filled when a user likes it on the timeline but /// not on the single-post-viewer (modal)
+// The logic for content.userLikedPhotos is built into the hook of getPhotos.

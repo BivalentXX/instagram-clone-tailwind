@@ -17,7 +17,6 @@ export default function Navbar() {
   const { user } = useUser(loggedInUser?.uid);
 
 
-
   return (
     <header className="h-16 bg-white border-b border-gray-primary mb-8">
       <div className="container mx-auto max-w-screen-lg h-full">
@@ -35,11 +34,12 @@ export default function Navbar() {
             {user ? (
               <>
                 <Link to={ROUTES.DASHBOARD} aria-label="Dashboard">
-                <Homeicon />
+                  <Homeicon />
                 </Link>
                 <Link to={`/upload/${user.username}`} aria-label="Upload">
-                <Uploadicon />
+                  <Uploadicon />
                 </Link>
+
                 <button
                   type="button"
                   title="Sign Out"
@@ -53,15 +53,12 @@ export default function Navbar() {
                       history.push(ROUTES.LOGIN);
                     }
                   }}>
-
                   <Logouticon />
-                 
-                  </button>
+                </button>
                   
                 <div className="flex items-center cursor-pointer">
                   <Avataricon user={user}/>
                 </div>
-
               </>
             ) : (
               <>

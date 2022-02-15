@@ -72,49 +72,70 @@ export async function updateFollowedUserFollowing (
 }
 
 export async function getPhotos(userId, following) {
-
   const result = await firebaseApp
     .firestore()
     .collection('photos')
     .where('userId', 'in', following)
     .get();
-
   const userFollowedPhotos = result.docs.map((photo) => ({
     ...photo.data(),
     docId: photo.id
   }));
-
-  // console.log(userFollowedPhotos)
-
   const photosWithUserDetails = await Promise.all(
     userFollowedPhotos.map(async (photo) => {
       let userLikedPhoto = false;
       if (photo.likes.includes(userId)) {
         userLikedPhoto = true;
       }
-
-      const user = await getUserByUserId(photo.userId);
-      
+      const user = await getUserByUserId(photo.userId);      
       const { username } = user[0];
       return { username, ...photo, userLikedPhoto };
     })
   );
-
   return photosWithUserDetails;
 }
 
-export async function getUserPhotosByUsername(username) {
+
+// export async function getUserPhotosByUsername(username) {
+//   const [user] = await getUserByUsername(username);
+//   const result = await firebaseApp
+//     .firestore()
+//     .collection('photos')
+//     .where('userId', '==', user.userId)
+//     .get();
+    
+//   return result.docs.map((item) => ({
+//     ...item.data(),
+//     docId: item.id
+//   }))
+// }
+export async function getUserPhotosByUsername(loggedInUser, username) {
+  console.log('loggedInUser', loggedInUser.userId)
   const [user] = await getUserByUsername(username);
   const result = await firebaseApp
     .firestore()
     .collection('photos')
     .where('userId', '==', user.userId)
-    .get();
-    
-  return result.docs.map((item) => ({
+    .get();    
+  const profilePhotos = result.docs.map((item) => ({
     ...item.data(),
     docId: item.id
   }))
+  const photosWithUserDetails = await Promise.all(
+    profilePhotos.map(async (photo) => {
+      let userLikedPhoto = false;
+      if (photo.likes.includes(loggedInUser.userId)) {
+        userLikedPhoto = true;
+      }
+
+      console.log('photo.likes.includes', photo.likes)
+      const user = await getUserByUserId(photo.userId)
+      const { username } = user[0];
+      return { username, ...photo, userLikedPhoto };
+    })
+  );
+  return photosWithUserDetails
+  
 }
 
 export async function isUserFollowingProfile(loggedInUserUsername, profileUserId) {

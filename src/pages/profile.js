@@ -5,15 +5,10 @@ import * as ROUTES from '../constants/routes'
 import Navbar from '../components/navbar'
 import UserProfile from '../components/profile'
 
-
-
-
 export default function Profile() {
   const { username } = useParams()
   const [user, setUser] = useState(null)
   const history = useHistory()  
-
-  
 
   useEffect(() => {
     async function checkUserExists() {
