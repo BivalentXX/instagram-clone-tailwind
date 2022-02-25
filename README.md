@@ -1,7 +1,6 @@
 ## [ReactJS Hook App Hosted using Netlify and Firebase =D](https://optimistic-einstein-fb8629.netlify.app)
 Credentials:
-<br>
-username = occampath@gmail.com
+username = occampath@gmail.com 
 <br>
 password = test123
 
@@ -13,10 +12,9 @@ Todo List
 * Redesign upload page and allow for avatar uploads
 * Refactor avatar sourcing to pull from image storage
 
-// eslint-disable-next-line react-hooks/exhaustive-deps
-  Added to
-    *src\components\profile\index.js
-    *src\components\sidebar\suggestions.js
-    *src\hooks\use-photos.js
+"// eslint-disable-next-line react-hooks/exhaustive-deps" added to
+* src\components\profile\index.js
+* src\components\sidebar\suggestions.js
+* src\hooks\use-photos.js
 
 
