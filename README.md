@@ -2,7 +2,7 @@
 Credentials:
 username = occampath@gmail.com 
 <br>
-password = test123
+password = Test123
 
 ## Current Status: Finishing up Cypress/Jest/RTL testing 100% E2E and port to AWS Amplify
 
