@@ -11,6 +11,7 @@ Todo List
 * Implement Messaging
 * Redesign upload page and allow for avatar uploads
 * Refactor avatar sourcing to pull from image storage
+* Improve UX by having a dialog sharing details of unexpected reroutes (e.g. src>components>icons>avatar-icon.js)
 
 "// eslint-disable-next-line react-hooks/exhaustive-deps" added to
 * src\components\profile\index.js
