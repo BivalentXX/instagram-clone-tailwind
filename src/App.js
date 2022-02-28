@@ -33,6 +33,6 @@ export default function App() {
         </Suspense>
       </Router>
     </UserContext.Provider>
-  );    
+  )
 }
 

@@ -22,13 +22,27 @@
     "react-scripts:start": "sleep 5 && react-scripts start",
     "start": "run-p watch:css react-scripts:start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test ---coverage --watchAll",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!<rootDir>/src/App.js",
+      "!<rootDir>/src/index.js",
+      "!<rootDir>/src/seed.js",
+      "!<rootDir>/src/fixtures/*.js",
+      "!<rootDir>/src/hooks/*.js",
+      "!<rootDir>/src/helpers/*.js"
+
+    ],
+    "coverageReporters": [
+      "html"
     ]
   },
   "browserslist": {

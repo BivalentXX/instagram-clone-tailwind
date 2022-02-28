@@ -41,6 +41,7 @@ export default function Navbar() {
                 </Link>
 
                 <button
+                  data-testid="sign-out"
                   type="button"
                   title="Sign Out"
                   onClick={() => {

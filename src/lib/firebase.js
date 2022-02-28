@@ -1,5 +1,6 @@
 import Firebase from 'firebase/app';
 import firebase from 'firebase';
+import 'firebase/storage'
 import 'firebase/firestore';
 import 'firebase/auth';
 // import { config } from '../config.js'
@@ -18,7 +19,6 @@ const configKeys = {
 }
 
 const firebaseApp = Firebase.initializeApp(configKeys);
-
 const storage = firebase.storage();
 const { FieldValue } = Firebase.firestore;
 

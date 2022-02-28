@@ -6,7 +6,7 @@ export default function Avataricon({ user: { username, avatarSrc } }) {
     <img
         className="rounded-full h-8 w-8 flex"
         src={"/images/avatars/default.png"}
-        alt={`${username}`}
+        alt={`${username}`+ " avatar"}
       />
      </Link>
   ) : (
@@ -14,7 +14,7 @@ export default function Avataricon({ user: { username, avatarSrc } }) {
       <img
         className="rounded-full h-8 w-8 flex"
         src={avatarSrc}
-        alt={`${username} `}
+        alt={`${username}` + " avatar"}
       />
     </Link>
   )

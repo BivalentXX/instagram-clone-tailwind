@@ -38,7 +38,6 @@ export async function getSuggestedProfiles(userId, following) {
     .filter((profile) => profile.userId !== userId && !following.includes(profile.userId));
 }
 
-
 export async function updateLoggedInUserFollowing(
   loggedInUserDocId,
   profileId,

@@ -12,22 +12,20 @@ export default function Profile() {
 
   useEffect(() => {
     async function checkUserExists() {
-      const user = await getUserByUsername(username);
-
-      if (user) {
-        setUser(user[0])
+      const [user] = await getUserByUsername(username)
+      if (user?.userId) {
+        setUser(user)
       } else {
-
-        history.push(ROUTES.NOT_FOUND);
+        history.push(ROUTES.NOT_FOUND)
       }
     }
-    checkUserExists();
+    checkUserExists()
   }, [username, history])
 
 // console.log(loggedInUser.uid)
 // console.log('active', activeUser)
 
-  return user ? (
+  return user?.username ? (
     <div className="bg-gray-background">
       <Navbar />
       <UserProfile user={user}/>

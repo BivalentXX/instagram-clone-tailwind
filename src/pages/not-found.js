@@ -11,7 +11,7 @@ export default function NotFound() {
     <div className="bg-gray-background">
       <Navbar />
       <div className="mx-auto max-w-screen-lg">
-        <p className="text-center text-2xl">Doo Duuu ddoooo. Nothing here</p>
+        <p className="text-center text-2xl">Page Not Found!</p>
       </div>
     </div>
   )

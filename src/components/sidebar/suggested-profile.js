@@ -4,10 +4,9 @@ import { Link } from 'react-router-dom';
 import { updateFollowedUserFollowing, updateLoggedInUserFollowing } from '../../services/firebase';
 import Avataricon from '../icons/avatar-icon'
 
-export default function SuggestedProfile({ profileDocId, username, profileId, userId, loggedInUserDocId, profile }) {
+export default function SuggestedProfile({ profileDocId, username, profileId, userId, loggedInUserDocId, profile}) {
   
   const [followed, setFollowed] = useState(false)
-
   // console.log(profile)
 
   async function handleFollowUser() {
@@ -16,9 +15,13 @@ export default function SuggestedProfile({ profileDocId, username, profileId, us
     await updateFollowedUserFollowing(profileDocId, userId, false)
 
   }
- 
+  //loggedInUserDocID is null in testing
+  // return (<Avataricon user={profile} />)
+  // : null; 
+  // !followed ? : (null);
   return !followed ? (
-    <div className="flex flex-row items-cneter algin-items justify-between">
+    <div className="flex flex-row items-center align-items justify-between">
+   
       <div className="flex items-center justify-between">
         <div className="mr-4">
           <Avataricon user={profile} />
@@ -27,7 +30,6 @@ export default function SuggestedProfile({ profileDocId, username, profileId, us
             <p className="font-bold text-sm">{username}</p>
           </Link>
       </div>
-
       <button 
         className="text-cs font-bold text-blue-medium"
         type="button"
@@ -35,9 +37,8 @@ export default function SuggestedProfile({ profileDocId, username, profileId, us
       >
         Follow
       </button>
-
     </div>
-  ) : null;
+  ) : (null);
 }
 
 SuggestedProfile.propTypes = {
