@@ -1,5 +1,5 @@
 ## [ReactJS Hook App Hosted using Netlify and Firebase =D](https://optimistic-einstein-fb8629.netlify.app)
-Credentials:
+Login credentials:
 <br>
 username = occampath@gmail.com 
 <br>
