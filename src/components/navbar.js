@@ -12,7 +12,7 @@ import Uploadicon from './icons/uploadicon';
 
 export default function Navbar() {
   const { firebaseApp } = useContext(FirebaseContext);
-  const history = useHistory(); 
+  const history = useHistory();
   const { user: loggedInUser } = useContext(UserContext);
   const { user } = useUser(loggedInUser?.uid);
 
